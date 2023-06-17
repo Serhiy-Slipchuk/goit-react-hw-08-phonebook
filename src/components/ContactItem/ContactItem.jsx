@@ -8,17 +8,15 @@ const ContactItem = function ({ name, number, id }) {
 
   return (
     <li className={css.contactItem}>
-      <p className={css.contactText}>
-        {name}
-        <span className={css.phoneText}>{number}</span>
-      </p>
+      <p className={css.contactText}>{name}</p>
+      <p className={css.phoneText}>{number}</p>
       <button
         className={css.button}
         type="button"
         id={id}
         onClick={() => {
           dispatch(deleteContactThunk(id));
-          dispatch(getContactsThunk())
+          dispatch(getContactsThunk());
         }}
       >
         Delete

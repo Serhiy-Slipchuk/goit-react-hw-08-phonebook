@@ -5,7 +5,7 @@ const Footer = function () {
   return (
     <footer className={css.footer}>
       <Container>
-        <p className={css.copyright}>2023 All rights reserved</p>
+        <p className={css.copyright}>&#169; 2023 All rights reserved</p>
       </Container>
     </footer>
   );

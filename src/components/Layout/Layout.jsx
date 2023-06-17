@@ -6,9 +6,6 @@ import { Outlet } from 'react-router-dom';
 const Layout = function () {
   return (
     <>
-      <head>
-        <meta name="robots" content="noindex, nofollow" />
-      </head>
       <Header />
       <main>
         <Container>

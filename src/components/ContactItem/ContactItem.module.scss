@@ -1,14 +1,23 @@
 .contactItem {
     display: flex;
     align-items: center;
+    padding: 10px;
+
+&:nth-child(2n) {
+    background-color: var(--secondaryBackgroundColor);
 }
+}
+
 .contactText {
+    font-size: 20px;
+    min-width: 400px;
     font-weight: 500;
     color: orange;
 }
 
 .phoneText {
-    margin-left: 10px;
+    min-width: 300px;
+    font-weight: 500;
     color: white;
 }
 

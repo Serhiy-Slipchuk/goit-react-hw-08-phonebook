@@ -1,0 +1,23 @@
+.tech-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.tech-link {
+    text-decoration: none;
+}
+
+.tech-text {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accentColor);
+    text-align: center;
+}
+
+.tech-image {
+    margin-left: auto;
+    margin-right: auto;
+}
