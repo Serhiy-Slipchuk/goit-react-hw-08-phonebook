@@ -35,7 +35,6 @@ const ContactsList = function () {
       ) : (
         <ErrorMessage message={'There is no any contact'} />
       )}
-      {}
     </>
   );
 };
