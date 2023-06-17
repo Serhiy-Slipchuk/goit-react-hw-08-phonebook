@@ -4,8 +4,8 @@
     margin: 20px 5px;
     padding-left: 20px;
     font-size: 16px;
-    color: white;
+    color: var(--primaryTextColor);
     list-style-type: circle;
-    border: 1px solid orange;
+    border: 1px solid (var(--accentColor));
     border-radius: 10px;
 }

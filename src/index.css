@@ -1,11 +1,13 @@
 @import-normalize; /* bring in normalize.css styles */
 
 :root {
-  --accentColor: orange;
+  --accentColor: #FFA500;
   --primaryTextColor: #ffffff;
   --secondaryTextColor: #f1d375;
   --primaryBackgroundColor: #0D1117;
   --secondaryBackgroundColor: #161B22;
+  --outlineColor: #008000;
+  --warningColor: #ff4500;
   --mainDuration: 250ms;
   --mainTimingFunction: cubic-bezier(0.4, 0, 0.2, 1);
 

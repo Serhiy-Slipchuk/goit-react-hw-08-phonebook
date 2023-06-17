@@ -14,7 +14,7 @@ const Filter = function () {
 
   return (
     <div className={css.filter}>
-      <p>Find contacts by name</p>
+      <label className={css['input-label']}>Find contacts by name
       <input
         className={css.input}
         type="text"
@@ -22,6 +22,7 @@ const Filter = function () {
         value={filter}
         onChange={e => handlerFilterInputChange(e)}
       />
+      </label>
     </div>
   );
 };

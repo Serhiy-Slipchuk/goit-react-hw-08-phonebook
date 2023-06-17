@@ -1,11 +1,13 @@
 .filter {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     
     & p {
         margin-left: 20px;
         margin-bottom: 5px;
         font-size: 20px;
-        color:orange;
+        color: var(--accentColor);
     }
 }
 
@@ -18,8 +20,15 @@
     width: 250px;
     height: 30px;
     font-size: 30px;
-    border: 1px solid orange;
+    border: 1px solid var(--accentColor);
     border-radius: 10px;
-    background-color: white;
-    outline-color: green;
+    background-color: var(--primaryTextColor);
+    outline-color: var(--outlineColor);
+}
+
+.input-label {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: var(--accentColor);
 }
