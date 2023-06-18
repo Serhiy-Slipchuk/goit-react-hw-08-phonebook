@@ -5,7 +5,7 @@ const Loader = function () {
   return (
     <div className={css['loader-thumb']}>
       <RotatingLines
-        strokeColor="orange"
+        strokeColor="#FFA500"
         strokeWidth="5"
         animationDuration="0.75"
         width="96"

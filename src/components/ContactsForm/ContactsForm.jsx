@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from 'redux/selectors';
 import { nanoid } from 'nanoid';
 import { addNewContactThunk } from 'redux/phonebookThunks';
+import Input from 'components/Input/Input';
 import css from './ContactsForm.module.scss';
 
 const ContactsForm = function () {
@@ -44,32 +45,26 @@ const ContactsForm = function () {
 
   return (
     <form className={css.form} onSubmit={e => handlerSubmitForm(e)}>
-      <label>
-        Name
-        <input
-          className={css.input}
-          type="text"
-          name="name"
-          value={name}
-          onChange={handlerInputChange}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-      </label>
-      <label>
-        Phone number
-        <input
-          className={css.input}
-          type="tel"
-          name="number"
-          value={number}
-          onChange={handlerInputChange}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-        />
-      </label>
+      <Input
+        label="Name"
+        type="text"
+        name="name"
+        value={name}
+        handler={handlerInputChange}
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        required={true}
+      />
+      <Input
+        label="Phone number"
+        type="tel"
+        name="number"
+        value={number}
+        handler={handlerInputChange}
+        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+        required={true}
+      />
       <button className={css.button} type="submit">
         Add contact
       </button>
