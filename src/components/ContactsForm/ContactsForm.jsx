@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 import { addNewContactThunk } from 'redux/phonebookThunks';
 import Input from 'components/Input/Input';
 import css from './ContactsForm.module.scss';
+import ButtonLarge from 'components/ButtonLarge/ButtonLarge';
 
 const ContactsForm = function () {
   const [name, setName] = useState('');
@@ -65,9 +66,7 @@ const ContactsForm = function () {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required={true}
       />
-      <button className={css.button} type="submit">
-        Add contact
-      </button>
+      <ButtonLarge type="submit" text="Add contact" />
     </form>
   );
 };

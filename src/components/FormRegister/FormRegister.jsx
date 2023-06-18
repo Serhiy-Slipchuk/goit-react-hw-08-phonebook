@@ -1,0 +1,67 @@
+import { useState } from 'react';
+import css from './FormRegister.module.scss';
+import Input from 'components/Input/Input';
+import ButtonLarge from 'components/ButtonLarge/ButtonLarge';
+
+const FormRegister = function () {
+  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [reEnterPassword, setReEnterPassword] = useState('');
+
+  const handlerInputChange = event => {
+    if (event.target.name === 'name') {
+      setUserName(event.target.value);
+    }
+    if (event.target.name === 'email') {
+      setEmail(event.target.value);
+    }
+    if (event.target.name === 'password') {
+      setPassword(event.target.value);
+    }
+    if (event.target.name === 're-enter-password') {
+      setReEnterPassword(event.target.value);
+    }
+  };
+
+  return (
+    <form className={css['register-form']}>
+      <Input
+        label="User Name"
+        type="text"
+        name="name"
+        value={userName}
+        handler={handlerInputChange}
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        required={true}
+      />
+      <Input
+        label="E-mail"
+        type="email"
+        name="email"
+        value={email}
+        handler={handlerInputChange}
+        required={true}
+      />
+      <Input
+        label="Password"
+        type="password"
+        name="password"
+        value={password}
+        handler={handlerInputChange}
+        required={true}
+      />
+      <Input
+        label="Re-enter password"
+        type="password"
+        name="re-enter-password"
+        value={reEnterPassword}
+        handler={handlerInputChange}
+        required={true}
+      />
+      <ButtonLarge type='submit' text="Create an Account" />
+    </form>
+  );
+};
+
+export default FormRegister;

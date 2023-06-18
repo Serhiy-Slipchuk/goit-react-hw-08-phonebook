@@ -1,0 +1,23 @@
+.button {
+    padding: 5px;
+    margin-left: 15px;
+    font-size: 16px;
+    border: 1px solid var(--accentColor);
+    border-radius: 5px;
+    color: var(--accentColor);
+    background-color: transparent;
+    transition: background-color var(--mainDuration) var(--mainTimingFunction), color var(--mainDuration) var(--mainTimingFunction), transform var(--mainDuration) var(--mainTimingFunction);
+
+
+    &:hover {
+        color: var(--secondaryBackgroundColor);
+        background-color: var(--accentColor);
+        transform: scale(1.07);
+    }
+
+    &:focus {
+        color: var(--primaryTextColor);
+        background-color: var(--accentColor);
+        transform: scale(1.07);
+    }
+}
