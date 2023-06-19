@@ -10,6 +10,20 @@ export const handlerAddNewContact = (state, { payload }) => {
   state.contacts.error = '';
 };
 
+export const handlerEditContact = (state, { payload }) => {
+  state.contacts.isLoading = false;
+  state.contacts.items = state.contacts.items.map(contact => {
+    if (contact.id === payload.data.id) {
+      contact.name = payload.data.name;
+      contact.number = payload.data.number;
+      return contact;
+    } else {
+      return contact;
+    }
+  });
+  state.contacts.error = '';
+};
+
 export const handlerDeleteContact = (state, { payload }) => {
   state.contacts.isLoading = false;
   state.contacts.items = state.contacts.items.filter(

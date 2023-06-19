@@ -4,6 +4,7 @@ import {
   getContactsThunk,
   addNewContactThunk,
   deleteContactThunk,
+  editContactThunk,
 } from './phonebookThunks';
 import {
   handlerGetContacts,
@@ -11,6 +12,7 @@ import {
   handlerDeleteContact,
   handlerPending,
   handlerError,
+  handlerEditContact,
 } from './phonebookSliceHandlers';
 
 export const phonebookSlice = createSlice({
@@ -31,6 +33,9 @@ export const phonebookSlice = createSlice({
       .addCase(addNewContactThunk.pending, handlerPending)
       .addCase(addNewContactThunk.fulfilled, handlerAddNewContact)
       .addCase(addNewContactThunk.rejected, handlerError)
+      .addCase(editContactThunk.pending, handlerPending)
+      .addCase(editContactThunk.fulfilled, handlerEditContact)
+      .addCase(editContactThunk.rejected, handlerError)
       .addCase(deleteContactThunk.pending, handlerPending)
       .addCase(deleteContactThunk.fulfilled, handlerDeleteContact)
       .addCase(deleteContactThunk.rejected, handlerError);
@@ -38,5 +43,5 @@ export const phonebookSlice = createSlice({
 });
 
 export const phonebookReducer = phonebookSlice.reducer;
-export const { updateFilter, addContact, deleteContact } =
+export const { updateFilter } =
   phonebookSlice.actions;

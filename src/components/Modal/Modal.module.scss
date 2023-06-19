@@ -1,0 +1,32 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--overlayColor);
+    z-index: 1000;
+  }
+  
+  .modal {
+    width: 450px;
+    height: 370px;
+    border-radius: 10px;
+    background-color: var(--secondaryBackgroundColor);
+  }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

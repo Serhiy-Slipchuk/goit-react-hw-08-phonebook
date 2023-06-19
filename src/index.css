@@ -6,6 +6,7 @@
   --secondaryTextColor: #f1d375;
   --primaryBackgroundColor: #0D1117;
   --secondaryBackgroundColor: #161B22;
+  --overlayColor: rgba(0, 0, 0, 0.8);
   --outlineColor: #008000;
   --warningColor: #ff4500;
   --mainDuration: 250ms;
