@@ -1,7 +1,7 @@
 import css from './Filter.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterSelector } from 'redux/selectors';
-import { updateFilter } from 'redux/phonebookSlice';
+import { filterSelector } from 'redux/phonebook/phonebookSelectors';
+import { updateFilter } from 'redux/phonebook/phonebookSlice';
 import Input from 'components/Input/Input';
 
 const Filter = function () {

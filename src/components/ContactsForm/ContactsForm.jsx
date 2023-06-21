@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { contactsSelector } from 'redux/selectors';
+import { contactsSelector } from 'redux/phonebook/phonebookSelectors';
 import { nanoid } from 'nanoid';
-import { addNewContactThunk } from 'redux/phonebookThunks';
+import { addNewContactThunk } from 'redux/phonebook/phonebookThunks';
 import Input from 'components/Input/Input';
 import css from './ContactsForm.module.scss';
 import ButtonLarge from 'components/ButtonLarge/ButtonLarge';

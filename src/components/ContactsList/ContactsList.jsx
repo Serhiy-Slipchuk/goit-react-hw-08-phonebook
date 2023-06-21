@@ -5,9 +5,9 @@ import {
   filteredContactsSelector,
   isLoadingSelector,
   errorSelector,
-} from 'redux/selectors';
+} from 'redux/phonebook/phonebookSelectors';
 import ContactItem from 'components/ContactItem/ContactItem';
-import { getContactsThunk } from 'redux/phonebookThunks';
+import { getContactsThunk } from 'redux/phonebook/phonebookThunks';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import Loader from 'components/Loader/Loader';
 

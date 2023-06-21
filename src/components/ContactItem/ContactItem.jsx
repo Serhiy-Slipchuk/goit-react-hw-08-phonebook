@@ -4,7 +4,7 @@ import {
   deleteContactThunk,
   editContactThunk,
   getContactsThunk,
-} from 'redux/phonebookThunks';
+} from 'redux/phonebook/phonebookThunks';
 import PropTypes from 'prop-types';
 import ButtonSmall from 'components/ButtonSmall/ButtonSmall';
 import { useState } from 'react';

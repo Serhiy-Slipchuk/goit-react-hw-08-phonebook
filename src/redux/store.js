@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { phonebookReducer } from './phonebookSlice';
+import { phonebookReducer } from './phonebook/phonebookSlice';
 import { authReducer } from './auth/authSlice';
 
 export const store = configureStore({
