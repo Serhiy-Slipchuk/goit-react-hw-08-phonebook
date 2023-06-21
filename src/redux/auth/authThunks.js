@@ -18,10 +18,8 @@ export const registerUserThunk = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/signup', newUser);
       token.set(data.token);
-      console.log('data register', data);
       return data;
     } catch (error) {
-        console.log('regerror', error)
       return rejectWithValue(error.response.data.message || `${error.response.data.name}. User with email "${error.response.data.keyValue.email}" have already registered`);
     }
   }
@@ -33,7 +31,6 @@ export const loginThunk = createAsyncThunk(
     try {
       const { data } = await axios.post('users/login', user);
       token.set(data.token);
-      console.log('login data', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -47,7 +44,6 @@ export const logoutThunk = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/logout');
       token.unset();
-      console.log('data logout', data);
     } catch (error) {
       return rejectWithValue(error.response.data.message);
     }
