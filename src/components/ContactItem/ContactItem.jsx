@@ -25,7 +25,6 @@ const ContactItem = function ({ name, number, id }) {
     setIsModalOpen(false);
 
     const editedContact = {
-      id,
       name: updatedName,
       number: updatedNumber,
     };

@@ -2,12 +2,17 @@ import { useState } from 'react';
 import css from './FormRegister.module.scss';
 import Input from 'components/Input/Input';
 import ButtonLarge from 'components/ButtonLarge/ButtonLarge';
+import { useDispatch } from 'react-redux';
+import { registerUserThunk } from 'redux/auth/authThunks';
+import PropTypes from 'prop-types';
 
-const FormRegister = function () {
+const FormRegister = function ({ handlerPassError }) {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [reEnterPassword, setReEnterPassword] = useState('');
+  const [reEnteredPassword, setReEnteredPassword] = useState('');
+
+  const dispatch = useDispatch()
 
   const handlerInputChange = event => {
     if (event.target.name === 'name') {
@@ -19,13 +24,32 @@ const FormRegister = function () {
     if (event.target.name === 'password') {
       setPassword(event.target.value);
     }
-    if (event.target.name === 're-enter-password') {
-      setReEnterPassword(event.target.value);
+    if (event.target.name === 're-entered-password') {
+      setReEnteredPassword(event.target.value);
     }
   };
 
+  const handlerSubmitForm = (event) => {
+    event.preventDefault();
+    handlerPassError('');
+    if (password !== reEnteredPassword) {
+      handlerPassError(`Your re-entered password "${reEnteredPassword}" is not correct`)
+      return
+    }
+    const newUser = {
+      name: userName,
+      email,
+      password,
+    }
+    dispatch(registerUserThunk(newUser));
+    setUserName('');
+    setEmail('');
+    setPassword('');
+    setReEnteredPassword('')
+  }
+
   return (
-    <form className={css['register-form']}>
+    <form className={css['register-form']} onSubmit={handlerSubmitForm}>
       <Input
         label="User Name"
         type="text"
@@ -54,8 +78,8 @@ const FormRegister = function () {
       <Input
         label="Re-enter password"
         type="password"
-        name="re-enter-password"
-        value={reEnterPassword}
+        name="re-entered-password"
+        value={reEnteredPassword}
         handler={handlerInputChange}
         required={true}
       />
@@ -63,5 +87,9 @@ const FormRegister = function () {
     </form>
   );
 };
+
+FormRegister.propTypes = {
+  handlerPassError: PropTypes.func.isRequired,
+}
 
 export default FormRegister;

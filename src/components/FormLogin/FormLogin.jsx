@@ -2,10 +2,14 @@ import { useState } from 'react';
 import ButtonLarge from 'components/ButtonLarge/ButtonLarge';
 import Input from 'components/Input/Input';
 import css from './FormLogin.module.scss';
+import { useDispatch } from 'react-redux';
+import { loginThunk } from 'redux/auth/authThunks';
 
 const FormLogin = function () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  const dispatch = useDispatch();
 
   const handlerInputChange = e => {
     if (e.target.name === 'email') {
@@ -16,8 +20,19 @@ const FormLogin = function () {
     }
   };
 
+  const handlerSubmitForm = (e) => {
+    e.preventDefault();
+    const user = {
+      email,
+      password
+    }
+    dispatch(loginThunk(user));
+    setEmail('');
+    setPassword('');
+  }
+
   return (
-    <form className={css['login-form']}>
+    <form className={css['login-form']} onSubmit={handlerSubmitForm}>
       <Input
         label="E-mail"
         type="email"

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { phonebookReducer } from './phonebookSlice';
+import { authReducer } from './auth/authSlice';
 
 export const store = configureStore({
   reducer: {
     phonebook: phonebookReducer,
+    auth: authReducer
   },
 
   middleware: getDefaultMiddleware =>
