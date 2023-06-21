@@ -13,7 +13,6 @@ const UserMenu = function () {
     dispatch(logoutThunk());
   }
 
-
   return (
     <div className={css['user-menu']}>
       <FaUserCircle className={css['user-avatar']} />

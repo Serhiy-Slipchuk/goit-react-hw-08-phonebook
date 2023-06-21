@@ -1,0 +1,25 @@
+.socials-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.socials-item:not(:first-child) {
+    margin-left: 20px;
+}
+
+.socials-link {
+    fill: var(--accentColor);
+    text-decoration: none;
+    transition: fill var(--mainDuration) var(--mainTimingFunction);
+
+    &:hover {
+        fill: var(--secondaryTextColor);
+    }
+}
+
+.socials-icon {
+    width: 30px;
+    height: 30px;
+    fill: inherit;
+}
