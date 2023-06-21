@@ -50,7 +50,7 @@ const Technologies = function () {
 
   return (
     <section className={css['technologies']}>
-      <Paragraph text="This application whiten by front-end developer Serhiy Slipchuk using technologies:" />
+      <Paragraph text="This application writen by front-end developer Serhiy Slipchuk using technologies:" />
       <ul className={css['tech-list']}>
         {technologiesList.map(({ id, name, icon, urlWebDocs }) => {
           return (

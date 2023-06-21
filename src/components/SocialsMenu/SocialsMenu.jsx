@@ -15,7 +15,7 @@ const SocialsMenu = function () {
         </a>
       </li>
       <li className={css['socials-item']}>
-        <a className={css['socials-link']} href="/" target='_blank' rel="noreferrer noopener nofollow">
+        <a className={css['socials-link']} href="https://t.me/s_slipchuk" target='_blank' rel="noreferrer noopener nofollow">
           <BsTelegram className={css['socials-icon']} />
         </a>
       </li>

@@ -38,7 +38,7 @@ export const authSlice = createSlice({
       })
       .addCase(loginThunk.rejected, (state, {payload}) => {
         state.isLoading = false;
-        state.error = payload;
+        state.error = `${payload}. Invalid user's email or password`;
       } )
       .addCase(logoutThunk.fulfilled, state => {
         state.token = '';

@@ -21,7 +21,8 @@ export const registerUserThunk = createAsyncThunk(
       console.log('data register', data);
       return data;
     } catch (error) {
-      return rejectWithValue(error.response.data.message);
+        console.log('regerror', error)
+      return rejectWithValue(error.response.data.message || `${error.response.data.name}. User with email "${error.response.data.keyValue.email}" have already registered`);
     }
   }
 );
@@ -35,7 +36,7 @@ export const loginThunk = createAsyncThunk(
       console.log('login data', data);
       return data;
     } catch (error) {
-      return rejectWithValue(error.response.data.message);
+      return rejectWithValue(error.message);
     }
   }
 );
