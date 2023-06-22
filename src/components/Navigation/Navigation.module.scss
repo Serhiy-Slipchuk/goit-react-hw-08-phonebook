@@ -1,17 +1,37 @@
 .navigation {
+    @media screen and (min-width: 1200px) {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    }
 }
 
 .main-menu {
     display: flex;
+    justify-content: center;
     list-style: none;
+    margin-top: 30px;
+
+    @media screen and (min-width: 1200px) {
+        justify-content: flex-start;
+        margin-top: 0;
+
+    }
 }
 
 .auth-menu {
     display: flex;
     list-style: none;
+    margin-top: 30px;
+
+    @media screen and (min-width: 1200px) {
+        margin-top: 0;
+
+    }
+}
+
+.nav-item {
+    padding: 10px 0px;
 }
 
 .nav-item:not(:first-child) {

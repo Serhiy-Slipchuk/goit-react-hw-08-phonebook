@@ -20,7 +20,10 @@ export const registerUserThunk = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error.response.data.message || `${error.response.data.name}. User with email "${error.response.data.keyValue.email}" have already registered`);
+      return rejectWithValue(
+        error.response.data.message ||
+          `${error.response.data.name}. User with email "${error.response.data.keyValue.email}" have already registered`
+      );
     }
   }
 );
@@ -44,8 +47,22 @@ export const logoutThunk = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/logout');
       token.unset();
+      return data;
     } catch (error) {
       return rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+export const getCurrentUserThunk = createAsyncThunk(
+  'auth/getCurrentUser',
+  async (localStorageTOKEN, { rejectWithValue }) => {
+    try {
+      token.set(localStorageTOKEN);
+      const { data } = await axios('/users/current');
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
     }
   }
 );

@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginThunk, logoutThunk, registerUserThunk } from './authThunks';
+import {
+  getCurrentUserThunk,
+  loginThunk,
+  logoutThunk,
+  registerUserThunk,
+} from './authThunks';
 import { initialState } from './authInitialState';
 import {
   handlerPending,
@@ -8,7 +13,10 @@ import {
   handlerRegisterError,
   handlerLoginError,
   handlerLogoutError,
+  handlerGetCurrentUser,
 } from './authSliceHandlers';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -23,8 +31,19 @@ export const authSlice = createSlice({
       .addCase(loginThunk.fulfilled, handlerRegisterAndLogin)
       .addCase(loginThunk.rejected, handlerLoginError)
       .addCase(logoutThunk.fulfilled, handlerLogout)
-      .addCase(logoutThunk.rejected, handlerLogoutError);
+      .addCase(logoutThunk.rejected, handlerLogoutError)
+      .addCase(getCurrentUserThunk.fulfilled, handlerGetCurrentUser)
+      .addCase(getCurrentUserThunk.rejected, handlerLogout);
   },
 });
 
-export const authReducer = authSlice.reducer;
+const persistConfig = {
+  key: 'tokenPHONEBOOK',
+  storage,
+  whitelist: ['token'],
+};
+
+export const authReducerPersisted = persistReducer(
+  persistConfig,
+  authSlice.reducer
+);

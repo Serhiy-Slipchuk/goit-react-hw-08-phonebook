@@ -31,3 +31,9 @@ export const handlerLoginError = (state, { payload }) => {
 export const handlerLogoutError = (state, { payload }) => {
   state.error = payload;
 };
+
+export const handlerGetCurrentUser = (state, { payload }) => {
+    state.error = '';
+    state.user = payload;
+    state.isLoggedIn = true;
+  }

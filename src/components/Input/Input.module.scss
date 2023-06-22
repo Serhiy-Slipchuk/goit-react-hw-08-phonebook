@@ -13,9 +13,14 @@
     padding: 10px 20px;
     width: 250px;
     height: 30px;
-    font-size: 30px;
+    font-size: 22px;
     border: 1px solid var(--accentColor);
     border-radius: 10px;
     background-color: var(--primaryTextColor);
     outline-color: var(--outlineColor);
+
+    @media screen and (min-width: 1200px) {
+        font-size: 30px;
+        
+    }
 }

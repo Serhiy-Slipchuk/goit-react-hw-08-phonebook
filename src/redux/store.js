@@ -1,18 +1,27 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { phonebookReducer } from './phonebook/phonebookSlice';
-import { authReducer } from './auth/authSlice';
+import { authReducerPersisted } from './auth/authSlice';
+import {
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
 export const store = configureStore({
   reducer: {
     phonebook: phonebookReducer,
-    auth: authReducer
+    auth: authReducerPersisted
   },
 
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         // Ignore these action types
-        ignoredActions: [],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         // Ignore these field paths in all actions
         ignoredActionPaths: [
           'payload.headers',
@@ -30,3 +39,5 @@ export const store = configureStore({
       },
     }),
 });
+
+export const persistor = persistStore(store);

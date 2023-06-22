@@ -9,14 +9,26 @@
 }
 
 .contactText {
-    font-size: 20px;
-    min-width: 400px;
+    font-size: 14px;
     font-weight: 500;
+    min-width: 100px;
     color: var(--accentColor);
+
+    @media screen and (min-width: 1200px) {
+        font-size: 20px;
+        min-width: 400px;
+    }
 }
 
 .phoneText {
-    min-width: 300px;
+    font-size: 14px;
     font-weight: 500;
+    min-width: 100px;
     color: var(--primaryTextColor);
+
+    @media screen and (min-width: 1200px) {
+        min-width: 300px;
+        font-size: 20px;
+        min-width: 400px;
+    }
 }

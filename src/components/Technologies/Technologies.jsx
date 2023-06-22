@@ -4,7 +4,7 @@ import iconSass from '../../assets/images/sass.svg';
 import iconJs from '../../assets/images/js.svg';
 import iconReact from '../../assets/images/react.svg';
 import iconRedux from '../../assets/images/redux.svg';
-import goIT from '../../assets/images/goit.webp';
+import goIT from '../../assets/images/goit-logo.webp';
 import css from './Technologies.module.scss';
 import Paragraph from 'components/Paragraph/Paragraph';
 

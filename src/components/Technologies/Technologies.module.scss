@@ -1,8 +1,22 @@
+.technologies {
+    padding: 20px 0;
+}
+
 .tech-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
     list-style: none;
+}
+
+.tech-item {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 0;
+    }
 }
 
 .tech-link {
@@ -11,13 +25,22 @@
 
 .tech-text {
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--accentColor);
     text-align: center;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 24px;
+    }
 }
 
 .tech-image {
     margin-left: auto;
     margin-right: auto;
+    width: 270px;
+
+    @media screen and (min-width: 1200px) {
+        width: 330px;
+    }
 }

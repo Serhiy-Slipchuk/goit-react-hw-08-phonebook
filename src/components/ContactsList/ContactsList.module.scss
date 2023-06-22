@@ -1,11 +1,14 @@
 .contactsList {
     display: block;
     min-height: 30px;
-    margin: 20px 5px;
-    padding-left: 20px;
     font-size: 16px;
     color: var(--primaryTextColor);
     list-style-type: circle;
     border: 1px solid (var(--accentColor));
     border-radius: 10px;
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 20px;
+        margin: 20px 5px;
+    }
 }
