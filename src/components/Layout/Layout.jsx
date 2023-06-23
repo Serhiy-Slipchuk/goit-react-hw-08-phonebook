@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { tokenSelector, userSelector } from 'redux/auth/authSelectors';
 import { getCurrentUserThunk } from 'redux/auth/authThunks';
+import { Suspense } from 'react';
 
 const Layout = function () {
   const user = useSelector(userSelector);
@@ -23,7 +24,9 @@ const Layout = function () {
       <Header />
       <main>
         <Container>
-          <Outlet />
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </Container>
       </main>
       <Footer />

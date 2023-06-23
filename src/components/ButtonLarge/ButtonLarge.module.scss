@@ -4,13 +4,15 @@
     padding: 13px;
     font-weight: 700;
     font-size: 20px;
-    letter-spacing: 0.15em;
     color: var(--accentColor);
     border: 2px solid var(--accentColor);
     border-radius: 10px;
     background-color: transparent;
     transition: background-color var(--mainDuration) var(--mainTimingFunction), color var(--mainDuration) var(--mainTimingFunction);
 
+    @media screen and (min-width: 1200px) {
+        letter-spacing: 0.15em;
+    }
 
     &:hover {
         color: var(--secondaryBackgroundColor);

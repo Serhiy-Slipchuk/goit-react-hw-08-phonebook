@@ -11,7 +11,7 @@ const UserMenu = function () {
 
   const handlerLogoutBtn = () => {
     dispatch(logoutThunk());
-  }
+  };
 
   return (
     <div className={css['user-menu']}>
@@ -20,7 +20,11 @@ const UserMenu = function () {
         <p className={css['user-text']}>Hello, {user.name}</p>
         <p className={css['user-text']}>{user.email}</p>
       </div>
-      <button className={css['logout']} type='button' onClick={handlerLogoutBtn}>
+      <button
+        className={css['logout']}
+        type="button"
+        onClick={handlerLogoutBtn}
+      >
         <MdLogout className={css['logout-icon']} />
         Logout
       </button>

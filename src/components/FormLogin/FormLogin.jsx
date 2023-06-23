@@ -8,7 +8,7 @@ import { loginThunk } from 'redux/auth/authThunks';
 const FormLogin = function () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+
   const dispatch = useDispatch();
 
   const handlerInputChange = e => {
@@ -20,16 +20,16 @@ const FormLogin = function () {
     }
   };
 
-  const handlerSubmitForm = (e) => {
+  const handlerSubmitForm = e => {
     e.preventDefault();
     const user = {
       email,
-      password
-    }
+      password,
+    };
     dispatch(loginThunk(user));
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
     <form className={css['login-form']} onSubmit={handlerSubmitForm}>

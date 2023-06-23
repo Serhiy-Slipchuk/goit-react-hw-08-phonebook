@@ -7,10 +7,9 @@ const Footer = function () {
     <footer className={css.footer}>
       <Container>
         <div className={css['footer-thumb']}>
-        <p className={css.copyright}>&#169; 2023 All rights reserved</p>
-        <SocialsMenu />
+          <p className={css.copyright}>&#169; 2023 All rights reserved</p>
+          <SocialsMenu />
         </div>
-        
       </Container>
     </footer>
   );

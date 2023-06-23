@@ -50,13 +50,13 @@ const Technologies = function () {
 
   return (
     <section className={css['technologies']}>
-      <Paragraph text="This application writen by front-end developer Serhiy Slipchuk using technologies:" />
+      <Paragraph text="This application is developed by front-end developer Serhiy Slipchuk using technologies:" />
       <ul className={css['tech-list']}>
         {technologiesList.map(({ id, name, icon, urlWebDocs }) => {
           return (
             <li key={id} className={css['tech-item']}>
               <a
-              className={css['tech-link']}
+                className={css['tech-link']}
                 href={urlWebDocs}
                 target="_blank"
                 rel="noreferrer noopener nofollow"
@@ -68,8 +68,8 @@ const Technologies = function () {
           );
         })}
       </ul>
-      <Paragraph text="using backend, written by" />
-      <img className={css['tech-image']} src={goIT} alt='GoIT'/>
+      <Paragraph text="using backend, developed by" />
+      <img className={css['tech-image']} src={goIT} alt="GoIT" />
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import css from './ErrorMessage.module.scss';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const ErrorMessage = function ({ message }) {
   return (
@@ -11,6 +11,6 @@ const ErrorMessage = function ({ message }) {
 
 ErrorMessage.propTypes = {
   message: PropTypes.string.isRequired,
-}
+};
 
 export default ErrorMessage;

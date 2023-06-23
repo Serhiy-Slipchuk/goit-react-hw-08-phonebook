@@ -12,7 +12,7 @@ const FormRegister = function ({ handlerPassError }) {
   const [password, setPassword] = useState('');
   const [reEnteredPassword, setReEnteredPassword] = useState('');
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handlerInputChange = event => {
     if (event.target.name === 'name') {
@@ -29,24 +29,26 @@ const FormRegister = function ({ handlerPassError }) {
     }
   };
 
-  const handlerSubmitForm = (event) => {
+  const handlerSubmitForm = event => {
     event.preventDefault();
     handlerPassError('');
     if (password !== reEnteredPassword) {
-      handlerPassError(`Your re-entered password "${reEnteredPassword}" is not correct`)
-      return
+      handlerPassError(
+        `Your re-entered password "${reEnteredPassword}" is not correct`
+      );
+      return;
     }
     const newUser = {
       name: userName,
       email,
       password,
-    }
+    };
     dispatch(registerUserThunk(newUser));
     setUserName('');
     setEmail('');
     setPassword('');
-    setReEnteredPassword('')
-  }
+    setReEnteredPassword('');
+  };
 
   return (
     <form className={css['register-form']} onSubmit={handlerSubmitForm}>
@@ -83,13 +85,13 @@ const FormRegister = function ({ handlerPassError }) {
         handler={handlerInputChange}
         required={true}
       />
-      <ButtonLarge type='submit' text="Create an Account" />
+      <ButtonLarge type="submit" text="Create an Account" />
     </form>
   );
 };
 
 FormRegister.propTypes = {
   handlerPassError: PropTypes.func.isRequired,
-}
+};
 
 export default FormRegister;

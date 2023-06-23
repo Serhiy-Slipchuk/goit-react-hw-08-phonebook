@@ -1,7 +1,16 @@
 import css from './Input.module.scss';
 import PropTypes from 'prop-types';
 
-const Input = function ({ label, type, name, value, handler, pattern, title, required }) {
+const Input = function ({
+  label,
+  type,
+  name,
+  value,
+  handler,
+  pattern,
+  title,
+  required,
+}) {
   return (
     <label className={css.label}>
       {label}
@@ -28,7 +37,6 @@ Input.propTypes = {
   pattern: PropTypes.string,
   title: PropTypes.string,
   required: PropTypes.bool.isRequired,
-
 };
 
 export default Input;
