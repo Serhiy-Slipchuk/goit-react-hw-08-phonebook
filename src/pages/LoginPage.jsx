@@ -12,7 +12,7 @@ const LoginPage = function() {
     return (
         <>
         <Heading text='Login Page'/>
-        <Paragraph text='Login form' />
+        <Paragraph text='Enter your e-mail and password' />
         <FormLogin />
         {isLoading && <Loader />}
         {error && <ErrorMessage message={error} />}
