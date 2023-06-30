@@ -17,7 +17,7 @@ const SocialsMenu = function () {
       <li className={css['socials-item']}>
         <a
           className={css['socials-link']}
-          href="https://www.linkedin.com/in/serhiy-slipchuk-a83858266/"
+          href="https://www.linkedin.com/in/serhiy-slipchuk/"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >
